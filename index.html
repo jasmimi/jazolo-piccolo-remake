@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>✨ Piccolo Remix ✨</title>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
@@ -162,6 +162,9 @@
     .bomb-loser{font-size:clamp(.65rem,3vw,.9rem);color:var(--gold);text-align:center;animation:fadeInUp .5s ease-out 1.3s both}
     @keyframes fadeInUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
     .bomb-btn-wrap{display:flex;flex-direction:column;align-items:center;width:100%;gap:10px;animation:fadeInUp .5s ease-out 1.6s both}
+
+    /* BOMB SHAKE CLASS */
+    .bomb-shake{animation:shake .5s ease-out}
 
     /* COUNTDOWN */
     #screen-countdown{gap:16px;text-align:center}
@@ -572,10 +575,10 @@
         setTimeout(() => { numEl.style.fontSize = ''; cb(); }, 700);
       } else {
         numEl.textContent = n;
-        // re-trigger animation
-        numEl.classList.remove('countBounce');
+        // re-trigger animation via style reset
+        numEl.style.animation = 'none';
         void numEl.offsetWidth;
-        numEl.classList.add('countBounce');
+        numEl.style.animation = '';
         Audio.playBlip();
       }
     }, 800);
@@ -617,13 +620,11 @@
     const indicator = document.getElementById('bomb-indicator');
     indicator.classList.toggle('danger', danger);
 
-    // re-trigger card animation
+    // re-trigger card flip animation via style reset
     const card = document.getElementById('task-card');
-    card.classList.remove('cardFlip');
-    void card.offsetWidth;
     card.style.animation = 'none';
     void card.offsetWidth;
-    card.style.animation = '';
+    card.style.animation = 'cardFlip .3s ease-out';
   }
 
   /* ============================================================
