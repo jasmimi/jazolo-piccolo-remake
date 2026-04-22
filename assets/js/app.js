@@ -41,7 +41,9 @@
     function init() {
       if (ctx) return;
       ctx = new (window.AudioContext||window.webkitAudioContext)();
-      if (ctx.state === 'suspended') ctx.resume();
+      if (ctx.state === 'suspended') {
+        ctx.resume().catch(err => console.error('Audio context resume failed:', err));
+      }
       masterGain = ctx.createGain(); masterGain.gain.value = 0.28;
       masterGain.connect(ctx.destination);
       bgmGain = ctx.createGain(); bgmGain.gain.value = 0.7;
@@ -135,6 +137,11 @@
       init();
       const t = ctx.currentTime;
       [523,659,784,1047].forEach((f,i)=> playNote(f,t+i*0.1,0.12,0.1,'square'));
+        function unlockAudio() {
+          if (!ctx || ctx.state === 'running') return;
+          ctx.resume().catch(err => console.error('Audio unlock failed:', err));
+        }
+
     }
 
     function toggleMusic() {
@@ -145,7 +152,7 @@
     }
 
     return { startBGM, stopBGM, playBomb, playBlip, playSuccess, toggleMusic, init,
-             isMusicEnabled: ()=>musicEnabled };
+             isMusicEnabled: ()=>musicEnabled, unlockAudio };
   })();
 
   /* ============================================================
@@ -370,6 +377,7 @@
   ============================================================ */
   // Welcome
   document.getElementById('btn-play').addEventListener('click', () => {
+      Audio.unlockAudio();
     Audio.init();
     Audio.playBlip();
     showScreen('screen-players');
