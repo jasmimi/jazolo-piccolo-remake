@@ -1,12 +1,14 @@
 # jazolo-piccolo-remake
 have you played piccolo with your mates and strangers, to be absolutely bewildered by how sexually skewed some of the questions are? if you've been personally victimised by this... I come with a fun inspired solution with jaz-friendly tasks. ready for your next girls night!!
 
+[try it yourself!](https://jasmimi.github.io/jazolo-piccolo-remake/)
+
 ## to do
 - [X] one-shot
 - [X] add assets & refine readme
 - [X] refactor (keeping monolithic js instead of modules for hosting ease)
-- [ ] host cheap & free (github?)
-- [ ] test mobile responsiveness
+- [X] host cheap & free (github?)
+- [X] test mobile responsiveness
 
 ## demo (desktop)
 ### intro

@@ -41,6 +41,7 @@
     function init() {
       if (ctx) return;
       ctx = new (window.AudioContext||window.webkitAudioContext)();
+      if (ctx.state === 'suspended') ctx.resume();
       masterGain = ctx.createGain(); masterGain.gain.value = 0.28;
       masterGain.connect(ctx.destination);
       bgmGain = ctx.createGain(); bgmGain.gain.value = 0.7;
