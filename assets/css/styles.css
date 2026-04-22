@@ -178,3 +178,28 @@ body::before{
   .title-main{font-size:2.6rem}
   .card-task-text{font-size:.8rem}
 }
+
+@media (max-width:430px){
+  .screen{
+    padding:12px;
+  }
+
+  .input-row{
+    flex-direction:column;
+    gap:10px;
+    align-items:stretch;
+  }
+
+  .btn-add{
+    width:100%;
+    font-size:.85rem;
+    padding:14px 12px;
+  }
+
+  .btn,
+  .task-card,
+  .player-list,
+  .input-row{
+    max-width:100%;
+  }
+}
