@@ -137,11 +137,13 @@
       init();
       const t = ctx.currentTime;
       [523,659,784,1047].forEach((f,i)=> playNote(f,t+i*0.1,0.12,0.1,'square'));
-        function unlockAudio() {
-          if (!ctx || ctx.state === 'running') return;
-          ctx.resume().catch(err => console.error('Audio unlock failed:', err));
-        }
+    }
 
+    function unlockAudio() {
+      init();
+      if (ctx.state === 'suspended') {
+        ctx.resume().catch(err => console.error('Audio unlock failed:', err));
+      }
     }
 
     function toggleMusic() {
