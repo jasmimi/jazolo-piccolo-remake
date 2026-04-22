@@ -8,7 +8,7 @@ have you played piccolo with your mates and strangers, to be absolutely bewilder
 - [X] add assets & refine readme
 - [X] refactor (keeping monolithic js instead of modules for hosting ease)
 - [X] host cheap & free (github?)
-- [ ] test mobile responsiveness
+- [X] test mobile responsiveness
 
 ## demo (desktop)
 ### intro

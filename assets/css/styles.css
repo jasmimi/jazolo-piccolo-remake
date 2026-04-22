@@ -6,7 +6,10 @@
   --gold:#fbbf24;--yellow:#fef08a;
   --white:#fdf4ff;--shadow:#3b0764;--text-dark:#3b0764;
 }
-html,body{height:100%;width:100%}
+html,body{height:100%;width:100%;overflow:hidden}
+html{
+  background:linear-gradient(160deg,#1a0030 0%,#3b0764 30%,#7c3aed 60%,#c026d3 85%,#f0abfc 100%);
+}
 body{
   font-family:'Press Start 2P','Courier New',monospace;
   background:linear-gradient(160deg,#1a0030 0%,#3b0764 30%,#7c3aed 60%,#c026d3 85%,#f0abfc 100%);
