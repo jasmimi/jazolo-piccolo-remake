@@ -4,6 +4,7 @@ have you played piccolo with your mates and strangers, to be absolutely bewilder
 ## to do
 - [X] one-shot
 - [X] add assets & refine readme
+- [ ] refactor
 - [ ] host cheap & free (github?)
 - [ ] test mobile responsiveness
 
