@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Jazolo app icon">
+  <rect width="512" height="512" rx="96" fill="#1a0030"/>
+  <rect x="32" y="32" width="448" height="448" rx="72" fill="#3b0764"/>
+  <rect x="64" y="64" width="384" height="384" rx="48" fill="#7c3aed"/>
+  <rect x="96" y="96" width="320" height="320" rx="24" fill="#fdf4ff"/>
+  <path fill="#ff1493" d="M256 374 138 256c-48-48-12-128 54-128 30 0 52 16 64 38 12-22 34-38 64-38 66 0 102 80 54 128L256 374Z"/>
+  <rect x="178" y="196" width="44" height="44" fill="#fef08a"/>
+  <rect x="290" y="196" width="44" height="44" fill="#fef08a"/>
+  <rect x="218" y="272" width="76" height="28" fill="#3b0764"/>
+  <rect x="150" y="72" width="24" height="72" fill="#fbbf24"/>
+  <rect x="126" y="96" width="72" height="24" fill="#fbbf24"/>
+  <rect x="338" y="72" width="24" height="72" fill="#fbbf24"/>
+  <rect x="314" y="96" width="72" height="24" fill="#fbbf24"/>
+  <rect x="230" y="394" width="52" height="52" fill="#fbbf24"/>
+  <rect x="206" y="410" width="100" height="20" fill="#fbbf24"/>
+</svg>
