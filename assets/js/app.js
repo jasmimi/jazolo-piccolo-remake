@@ -241,6 +241,87 @@
     { cat:'🌈 GROUP VIBE', text:'{P} gives everyone in the group a unique nickname for the rest of the game. If anyone forgets to use the nicknames, they drink!' },
   ];
 
+  const TWO_PLAYER_TASKS = [
+    // DANCE / BUST A JIVE
+    { cat:'🕺 BUST A JIVE', text:'{P} has 15 seconds to bust their BEST dance move. {P2} scores it out of 10. 7+ means {P} gives out 2 sips, otherwise {P} drinks 2!' },
+    { cat:'🕺 BUST A JIVE', text:'Dance battle! {P} vs {P2} right now. Both perform for 10 seconds. Decide the winner together or both drink 1.' },
+    { cat:'🕺 BUST A JIVE', text:'{P} must do the robot every single time {P2} says the word "drink" for the next 3 rounds.' },
+    { cat:'🕺 BUST A JIVE', text:'Air band time! {P} picks a song in their head and air-plays a full 20 seconds. If {P2} guesses the vibe, {P} drinks 1. If not, {P2} drinks 1.' },
+    { cat:'🕺 BUST A JIVE', text:'{P} teaches {P2} one dance move right now. If {P2} copies it perfectly, {P} drinks. If not, {P2} drinks!' },
+    { cat:'🕺 BUST A JIVE', text:'Freeze dance! {P} dances while {P2} waits to shout FREEZE. If {P} freezes instantly, {P2} drinks. If not, {P} drinks!' },
+    { cat:'🕺 BUST A JIVE', text:'{P} must moonwalk across the room and back. If {P2} laughs, {P2} drinks. If {P2} stays serious, {P} drinks!' },
+    { cat:'🕺 BUST A JIVE', text:'Vibe check! {P} has 30 seconds to do their best disco impression. {P2} gives a one-word review and awards or assigns 2 sips.' },
+    // SPOTIFY
+    { cat:'🎧 SPOTIFY DAYLIST', text:'DAYLIST DROP! {P}, open Spotify right now and read your Daylist title out loud. {P2} decides: chaotic = {P2} drinks, boring = {P} drinks!' },
+    { cat:'🎧 SPOTIFY DAYLIST', text:'Predict it! {P2} guesses what {P}’s current Spotify Daylist title says. {P} checks and reveals. Wrong guess = {P2} drinks!' },
+    { cat:'🎧 SPOTIFY DAYLIST', text:'{P2} has to describe {P}’s music vibe in exactly 3 words. If {P} agrees with all 3, {P2} is spared. Otherwise {P2} drinks!' },
+    { cat:'🎧 SPOTIFY DAYLIST', text:'Mood match: {P} reads their Daylist title. {P2} decides if it matches their energy tonight. Guilty = {P} drinks 2, innocent = {P2} drinks 1!' },
+    { cat:'🎧 SPOTIFY ARTIST', text:'Hot take! {P2} guesses {P}’s #1 Spotify artist this year. {P} reveals the truth. Wrong guess = {P2} drinks, correct guess = {P} drinks 2!' },
+    { cat:'🎧 SPOTIFY ARTIST', text:'{P} hums the first 5 seconds of their most played song this month. {P2} gets 3 guesses. No correct guess = 2 sips to {P}!' },
+    { cat:'🎧 SPOTIFY ARTIST', text:'Most embarrassing liked song! {P} opens Spotify and reads their most embarrassing liked song title. Then {P2} shares one too.' },
+    { cat:'🎧 SPOTIFY ARTIST', text:'{P} opens Spotify and reads their last 3 recently played songs out loud. {P2} gives each one a vibe rating: bop / mid / flop.' },
+    { cat:'🎧 SPOTIFY ARTIST', text:'Wrapped preview! {P2} guesses {P}’s top genre. {P} checks and reveals. Wrong guess = {P2} drinks 2, correct guess = {P} drinks 2!' },
+    { cat:'🎧 SPOTIFY ARTIST', text:'Guilty pleasures! {P} admits to one song they’ve listened to 3+ times this week that they’re ashamed of. {P2} may ask one follow-up.' },
+    // NOTES APP
+    { cat:'📝 NOTES APP', text:'READ IT OUT! {P} must open their notes app and read their most recent note out loud. No skipping. No edits. Raw.' },
+    { cat:'📝 NOTES APP', text:'Notes roulette! {P} and {P2} both read their second-to-last note out loud. The weirder note gives out 3 sips.' },
+    { cat:'📝 NOTES APP', text:'{P} has a secret note. Time to share it with {P2}... or drink 3 and keep the mystery.' },
+    { cat:'📝 NOTES APP', text:'Shopping list confession! {P} reads their current shopping list. If {P2} thinks anything on it is weird or unexpected, {P} drinks!' },
+    { cat:'📝 NOTES APP', text:'Live dictation! {P} dictates a sentence to {P2}, who types it into their notes app and reads it back dramatically.' },
+    { cat:'📝 NOTES APP', text:'{P} reads the note they wrote most recently at 11pm or later. If they can’t find one, they drink 2.' },
+    { cat:'📝 NOTES APP', text:'Longest note! {P} and {P2} compare note lengths. Whoever has the longest note reads the first 3 lines and gives out 2 sips.' },
+    // SNAPCHAT / SOCIAL
+    { cat:'👻 SNAP DARE', text:'SNAP DARE! {P} hands their phone to {P2} who posts ONE harmless story on their Snapchat right now. Zero veto. Zero preview.' },
+    { cat:'👻 SNAP DARE', text:'{P2} chooses a filter and {P} sends a snap to someone they haven’t spoken to in 6+ months.' },
+    { cat:'👻 SNAP DARE', text:'Selfie time! {P} is the photographer and {P2} directs the pose. Make it iconic. Post it or both drink 1.' },
+    { cat:'👻 SNAP DARE', text:'📸 Boomerang time! {P} does a 10-second boomerang choreographed by {P2}. Post-worthy or drink 2!' },
+    { cat:'👻 SNAP DARE', text:'{P} changes their WhatsApp profile photo to one chosen by {P2} from their camera roll for the next hour. No cheating!' },
+    { cat:'👻 SNAP DARE', text:'Story takeover! {P} hands their phone to {P2} for exactly 90 seconds to post one harmless Instagram story. Phone back at the bell.' },
+    // QUESTION MASTER
+    { cat:'👑 QUESTION MASTER', text:'QUESTION MASTER! {P} is now the Question Master. If {P2} answers a yes/no question from {P}, {P2} drinks 1. Power lasts 3 rounds!' },
+    { cat:'👑 QUESTION MASTER', text:'Hot seat! {P2} asks {P} rapid-fire questions for 30 seconds. First hesitation = {P} drinks. No passes!' },
+    { cat:'👑 QUESTION MASTER', text:'Truth bomb: {P} asks {P2} any question in the world. They must answer honestly or drink 3. No topic is off limits (keep it fun!).' },
+    { cat:'👑 QUESTION MASTER', text:'Would you rather? {P} asks {P2} a "would you rather" question. If {P2} refuses to choose, they drink 1.' },
+    { cat:'👑 QUESTION MASTER', text:'20 questions! {P} thinks of a famous person. {P2} gets 5 yes/no questions total to guess who it is. Wrong = {P} gives out 2 sips!' },
+    { cat:'👑 QUESTION MASTER', text:'Fortune teller! {P} makes a prediction about {P2}’s next year. If {P2} accepts the prophecy, {P2} drinks. If not, {P} drinks!' },
+    { cat:'👑 QUESTION MASTER', text:'Rapid fire! {P} has 30 seconds to answer as many questions from {P2} as possible. Less than 5 answers = drink 2!' },
+    // IMPRESSIONS
+    { cat:'🎭 IMPRESSIONS', text:'{P} does their best impression of a famous celebrity or TV character. {P2} gets 3 guesses. Failed guess = {P} drinks!' },
+    { cat:'🎭 IMPRESSIONS', text:'{P} must speak only in questions for the next 2 rounds. Any statement spotted by {P2} = drink 1. Go!' },
+    { cat:'🎭 IMPRESSIONS', text:'Freestyle rap! {P} raps for 20 seconds about a topic {P2} chooses. {P2} rates it: fire 🔥 or trash 🗑️' },
+    { cat:'🎭 IMPRESSIONS', text:'{P} speaks in an accent chosen by {P2} until the next round. Breaking character = drink 1 per slip.' },
+    { cat:'🎭 IMPRESSIONS', text:'{P} explains what happened in the last episode of a show they’re currently watching. No title allowed. {P2} guesses the show!' },
+    { cat:'🎭 IMPRESSIONS', text:'Name that tune! {P} hums a song for 10 seconds. If {P2} guesses it, {P2} gives out 2 sips. If not, {P} drinks 1.' },
+    { cat:'🎭 IMPRESSIONS', text:'{P} must narrate the last 5 minutes of the evening in the voice of a nature documentary presenter while {P2} acts it out.' },
+    // PHONE DARES
+    { cat:'📱 PHONE DARE', text:'Phone swap! {P} and {P2} swap phones for exactly 60 seconds. No looking at messages. No apps. Just vibes.' },
+    { cat:'📱 PHONE DARE', text:'{P} turns their phone volume up to full and reads their last 3 notifications out loud to {P2}.' },
+    { cat:'📱 PHONE DARE', text:'{P} lets {P2} send one completely harmless text to a contact they choose. {P2} picks the recipient and writes the message.' },
+    { cat:'📱 PHONE DARE', text:'{P} opens their camera roll. {P2} gets to see the next 5 photos that appear and must react out loud to each one!' },
+    { cat:'📱 PHONE DARE', text:'Profile pic roulette! {P} changes their phone lock screen wallpaper to a photo chosen by {P2} for the rest of the evening.' },
+    { cat:'📱 PHONE DARE', text:'{P} sends a voice note to someone not here. {P2} writes the script. No deviating from the script!' },
+    { cat:'📱 PHONE DARE', text:'Without looking: {P} guesses how many unread notifications they have right now. {P2} guesses too. Furthest from the truth drinks 2!' },
+    // CONFESSIONS & FUNNY
+    { cat:'🙈 CONFESS!', text:'{P} reveals their most embarrassing autocorrect fail to {P2}. Bonus sip if it was sent to the wrong person.' },
+    { cat:'🙈 CONFESS!', text:'{P} shares the most recent thing that made them laugh out loud completely alone. Re-enactment required for {P2}.' },
+    { cat:'🙈 CONFESS!', text:'2am confession! {P} admits the last thing they googled after midnight. Read the exact search term. No paraphrasing.' },
+    { cat:'🙈 CONFESS!', text:'{P} confesses which song they’ve had on repeat this week. Must hum 10 seconds of it to prove it.' },
+    { cat:'🙈 CONFESS!', text:'{P} tells {P2} their most recent dream in full. {P2} rates it out of 10 for: chaos / romance / boring.' },
+    // MINI GAMES
+    { cat:'🎮 MINI GAME', text:'Rock Paper Scissors duel! {P} and {P2} play best of 5. Loser drinks 2. Go!' },
+    { cat:'🎮 MINI GAME', text:'{P} picks a number 1–10 in their head. {P2} gets one guess. Exact guess = {P} drinks 2, otherwise {P2} drinks 1.' },
+    { cat:'🎮 MINI GAME', text:'Staring contest: {P} vs {P2}. First to blink drinks 2. No touching.' },
+    { cat:'🎮 MINI GAME', text:'Whisper challenge! {P} whispers a ridiculous sentence once. {P2} repeats what they heard. If it changes, both drink 1.' },
+    { cat:'🎮 MINI GAME', text:'⏱ Speed round! How many times can {P} clap in 10 seconds? {P2} tries to beat the score. Loser drinks!' },
+    // GROUP VIBES
+    { cat:'🌈 GROUP VIBE', text:'Compliment swap! {P} gives {P2} a genuine compliment, then {P2} gives one back. Weak compliments drink 1.' },
+    { cat:'🌈 GROUP VIBE', text:'{P} writes and performs a haiku about {P2} right now. If {P2} laughs, {P2} drinks. If not, {P} drinks.' },
+    { cat:'🌈 GROUP VIBE', text:'Emoji guess! {P2} guesses {P}’s most used emoji. Correct guess = {P} drinks 2. Wrong guess = {P2} drinks 1.' },
+    { cat:'🌈 GROUP VIBE', text:'Movie pitch! {P} pitches a sequel to the last film they watched in 30 seconds. {P2} decides: greenlit ✅ or cancelled ❌' },
+    { cat:'🌈 GROUP VIBE', text:'Replace all words in a song chorus with food items. {P} performs it. {P2} guesses the original song!' },
+    { cat:'🌈 GROUP VIBE', text:'{P} gives {P2} a unique nickname for the rest of the game. If {P2} forgets to use it, they drink!' },
+  ];
+
   /* ============================================================
      PARTICLES
   ============================================================ */
@@ -269,7 +350,8 @@
   let bombPos = 0;
 
   function buildDeck() {
-    const shuffled = [...TASKS].sort(()=>Math.random()-0.5);
+    const tasks = players.length === 2 ? TWO_PLAYER_TASKS : TASKS;
+    const shuffled = [...tasks].sort(()=>Math.random()-0.5);
     // bomb goes somewhere between round 8 and round 20
     bombPos = 8 + Math.floor(Math.random()*13);
     deck = shuffled;
